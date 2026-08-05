@@ -38,6 +38,12 @@ class Store
     {
         return this.#status;
     }
+
+    // getting the amount
+    get amount()
+    {
+        return this.#totalAmount;
+    }
 }
 
 // creating various inventory data
@@ -57,3 +63,12 @@ storeInventory.forEach(item=>
 // 2. Displaying only the delivered order
 let deliveredItems = storeInventory.filter(items=>items.status==="Delivered");
 console.log(deliveredItems);
+
+// 3. Calculating total revenue generated from all order
+let revenueGen = storeInventory.reduce((total, item)=>
+    {
+        return total + item.amount;
+    },0);
+console.log("Total Revenue Generated: " + revenueGen);
+
+// 4. 
