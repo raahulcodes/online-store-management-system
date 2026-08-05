@@ -71,4 +71,9 @@ let revenueGen = storeInventory.reduce((total, item)=>
     },0);
 console.log("Total Revenue Generated: " + revenueGen);
 
-// 4. 
+// 4. Finding the element with highest amount
+let highestAmount = storeInventory.reduce((highestAmount, item)=>
+    {
+        return highestAmount>item.amount? highestAmount:item.amount;
+    }, 0);
+console.log(highestAmount);
