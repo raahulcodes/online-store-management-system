@@ -32,6 +32,12 @@ class Store
                 Amount: ₹${this.#totalAmount}
                 Status: ${this.#status}`;
     }
+
+    // getting delivered updates
+    get status()
+    {
+        return this.#status;
+    }
 }
 
 // creating various inventory data
@@ -40,10 +46,14 @@ let item2 = new Store(102, "Priyanka Sharma", ["Iphone 13"], 60000, "Pending");
 let item3 = new Store(103, "Umesh Singh", ["Laptop"], 60000, "Shipped");
 let item4 = new Store(104, "Varinder Singh", ["Plant Pot"], 10000, "Cancelled");
 
-// displaying all orders
+// 1. displaying all orders
 storeInventory.forEach(item=>
 {
     console.log(item.printInventory());
     console.log("--------------------")
 }
 )
+
+// 2. Displaying only the delivered order
+let deliveredItems = storeInventory.filter(items=>items.status==="Delivered");
+console.log(deliveredItems);
