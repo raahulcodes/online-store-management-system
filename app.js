@@ -56,6 +56,12 @@ class Store
     {
         return this.#products;
     }
+
+    // getting OrderId
+    get ordid()
+    {
+        return this.#orderId;
+    }
 }
 
 // creating various inventory data
@@ -131,3 +137,8 @@ else
 {
     console.log("There is not aleast 1 product in every order.");
 }
+
+// 8. Finding an order using OrderId
+let searchOrdId = 104;
+let findOrderId = storeInventory.filter(orderId=>orderId.ordid==searchOrdId);
+console.log(findOrderId);
