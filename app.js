@@ -48,6 +48,7 @@ class Store
 
 // creating various inventory data
 let item1 = new Store(101, "Rahul Sharma", ["Laptop", "Iphone 13"], 120000, "Delivered");
+let item5 = new Store(105, "Rahul Sharma", ["Laptop", "Iphone 13"], 120000, "Delivered");
 let item2 = new Store(102, "Priyanka Sharma", ["Iphone 13"], 60000, "Pending");
 let item3 = new Store(103, "Umesh Singh", ["Laptop"], 60000, "Shipped");
 let item4 = new Store(104, "Varinder Singh", ["Plant Pot"], 10000, "Cancelled");
@@ -77,3 +78,24 @@ let highestAmount = storeInventory.reduce((highestAmount, item)=>
         return highestAmount>item.amount? highestAmount:item.amount;
     }, 0);
 console.log(highestAmount);
+
+// 5. Counting the no. of orders from each status
+let countOrders = storeInventory.reduce((count, order) =>
+{
+    if (count[order.status])
+    {
+        count[order.status]++;
+    }
+    else
+    {
+        count[order.status] = 1;
+    }
+
+    return count;
+}, {});
+
+console.log(countOrders);
+
+// displaying all orders worth more than 20,000
+let orderTwenTh = storeInventory.filter(order=>order.amount>20000);
+console.log(orderTwenTh);
