@@ -33,6 +33,12 @@ class Store
                 Status: ${this.#status}`;
     }
 
+    // getting names
+    get names()
+    {
+        return this.#customerName;    
+    }
+
     // getting delivered updates
     get status()
     {
@@ -48,7 +54,7 @@ class Store
 
 // creating various inventory data
 let item1 = new Store(101, "Rahul Sharma", ["Laptop", "Iphone 13"], 120000, "Delivered");
-let item5 = new Store(105, "Rahul Sharma", ["Laptop", "Iphone 13"], 120000, "Delivered");
+let item5 = new Store(105, "Rajeev Sharma", ["Laptop"], 120000, "Delivered");
 let item2 = new Store(102, "Priyanka Sharma", ["Iphone 13"], 60000, "Pending");
 let item3 = new Store(103, "Umesh Singh", ["Laptop"], 60000, "Shipped");
 let item4 = new Store(104, "Varinder Singh", ["Plant Pot"], 10000, "Cancelled");
@@ -99,3 +105,10 @@ console.log(countOrders);
 // displaying all orders worth more than 20,000
 let orderTwenTh = storeInventory.filter(order=>order.amount>20000);
 console.log(orderTwenTh);
+
+// 6. displaying all customers name
+storeInventory.forEach(customer=>
+{
+    console.log(customer.names);
+}
+)
