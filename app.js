@@ -142,3 +142,7 @@ else
 let searchOrdId = 104;
 let findOrderId = storeInventory.filter(orderId=>orderId.ordid==searchOrdId);
 console.log(findOrderId);
+
+// 9. Sorting arrays according to total amount
+let amountArray = [...storeInventory].sort((order, order1)=>order.amount-order1.amount);
+console.log(amountArray);
