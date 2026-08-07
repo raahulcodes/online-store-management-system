@@ -146,3 +146,7 @@ console.log(findOrderId);
 // 9. Sorting arrays according to total amount
 let amountArray = [...storeInventory].sort((order, order1)=>order.amount-order1.amount);
 console.log(amountArray);
+
+// 10. Sorting arrays according to customer Names
+let nameArray = [...storeInventory].sort((order, order1)=>order.names.localeCompare(order1.names));
+console.log(nameArray);
